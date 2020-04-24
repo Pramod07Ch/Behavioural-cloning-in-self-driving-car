@@ -22,11 +22,12 @@ We have provided a simulator where you can steer a car around a track for data c
 
 ### Data collection
 
-Data is collected by driving few laps on udacity driving simulator. Because of the nature of the track, so our processing step will also include data augmentation and balancing, in other to prevent our model from being biased towards driving straight and left turns.
-Sample images:
-[center](images/center.jpg)
-![left](images\left.jpg)
-![right](images\right.jpg)
+Data is collected by driving few laps on udacity driving simulator. Because of the nature of the track, there is a much need of processing steps which includes data augmentation, in order to prevent our model from being biased towards driving straight and left turns.<br/>
+
+Sample images:<br/>
+[center](images/center.jpg)<br/>
+![left](images\left.jpg)<br/>
+![right](images\right.jpg)<br/>
 
 ### Data Pre-processing
 
@@ -41,15 +42,15 @@ The pre-processing steps applied are:
 ### Model architecture
 
 The Nvidia model was adopted for training because of its prior application. The network consists of 9 layers, including a normalization layer, 5 convolutional layers and 3 fully connected layers with droupouts inbetween.
-Input image mage should be normalized in the first layer and followed by crop of road i.e. only road in the image and removing the unnecessary parts of image such as sky, trees etc.
-![nvidia](images\nvidia.png)
-Convolution were used in the first three layers with 2x2 strides and a 5x5 kernel, and non-strided convolution with 3x3 kernel size in the last two convolutional layers.
+Input image mage should be normalized in the first layer and followed by crop of road i.e. only road in the image and removing the unnecessary parts of image such as sky, trees etc.<br/>
+![nvidia](images\nvidia.png)<br/>
+Convolution were used in the first three layers with 2x2 strides and a 5x5 kernel, and non-strided convolution with 3x3 kernel size in the last two convolutional layers.<br/>
 
-The convolutional layers were followed by three fully connected layers which then outputs the steering angle.
+The convolutional layers were followed by three fully connected layers which then outputs the steering angle.<br/>
 
-Overfitting was reduced by using aggressive Dropout (0.3) on all the layers. This turned out to be a good practice as the model could generalize to the second track, without using it for training.
+Overfitting was reduced by using aggressive Dropout (0.3) on all the layers. This turned out to be a good practice as the model could generalize to the second track, without using it for training.<br/>
 
-An Adam optimizer was used for optimization. This requires little or no tunning as the learning rate is adaptive. In addition, checkpoint and early stop mechanisms can also be used during training to chose best training model by monitoring the validation loss and stopping the training if the loss does not reduce in three consecutive epochs.
+An Adam optimizer was used for optimization. This requires little or no tunning as the learning rate is adaptive. In addition, checkpoint and early stop mechanisms can also be used during training to chose best training model by monitoring the validation loss and stopping the training if the loss does not reduce in three consecutive epochs.<br/>
 
 ### Model train and test
 he trained model was tested on the first track. This gave a good result, as the car could drive on the track smoothly.
