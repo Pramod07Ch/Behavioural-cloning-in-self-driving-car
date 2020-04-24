@@ -24,9 +24,9 @@ We have provided a simulator where you can steer a car around a track for data c
 
 Data is collected by driving few laps on udacity driving simulator. Because of the nature of the track, so our processing step will also include data augmentation and balancing, in other to prevent our model from being biased towards driving straight and left turns.
 Sample images:
-[center] (images\center)
-![left] (images\left)
-![right] (images\right)
+[center](images/center.jpg)
+![left](images\left.jpg)
+![right](images\right.jpg)
 
 ### Data Pre-processing
 
@@ -42,7 +42,7 @@ The pre-processing steps applied are:
 
 The Nvidia model was adopted for training because of its prior application. The network consists of 9 layers, including a normalization layer, 5 convolutional layers and 3 fully connected layers with droupouts inbetween.
 Input image mage should be normalized in the first layer and followed by crop of road i.e. only road in the image and removing the unnecessary parts of image such as sky, trees etc.
-![nvidia](images\nvidia.jpg)
+![nvidia](images\nvidia.png)
 Convolution were used in the first three layers with 2x2 strides and a 5x5 kernel, and non-strided convolution with 3x3 kernel size in the last two convolutional layers.
 
 The convolutional layers were followed by three fully connected layers which then outputs the steering angle.
