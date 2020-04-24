@@ -24,9 +24,9 @@ We have provided a simulator where you can steer a car around a track for data c
 
 Data is collected by driving few laps on udacity driving simulator. Because of the nature of the track, so our processing step will also include data augmentation and balancing, in other to prevent our model from being biased towards driving straight and left turns.
 Sample images:
-![center](images\center)
-![left](images\left)
-![right](images\right)
+[center] (images\center)
+![left] (images\left)
+![right] (images\right)
 
 ### Data Pre-processing
 
